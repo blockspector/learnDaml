@@ -4,8 +4,39 @@ import Daml.Script
 increment: Int -> Int 
 increment  n = n + 1 
 
+add: Int -> Int -> Int
+add x y = x + y 
+
+
+
+
+quadFunction: Int -> Int -> Int -> Int
+quadFunction x y z = 3 * x^2 + 2 * y + z
+
+
+
+lambdaQuadFunction : Int -> Int -> Int -> Int
+lambdaQuadFunction = (\x y z -> 3*x^2 + 2*y + z)
+
+
+doubleMe : Int -> Int
+doubleMe x = 2 * x
+
+doubleUs : Int -> Int -> Int
+doubleUs x y = doubleMe x + doubleMe y
+
+
 testFunctions: Script ()
 testFunctions = script do
 debug $ increment 3 
+debug $ add 3 3 
+
+
+
+debug $ quadFunction 1 2 3
+debug $ lambdaQuadFunction 1 2 3
+debug $ doubleMe 3
+debug $ doubleUs 3 4
+
 
   
