@@ -1,0 +1,10 @@
+module Contract where
+
+template User with
+    username: Party
+    following: [Party]
+  where
+    signatory username
+    observer following 
+
+    
