@@ -37,6 +37,7 @@ debug $ quadFunction 1 2 3
 debug $ lambdaQuadFunction 1 2 3
 debug $ doubleMe 3
 debug $ doubleUs 3 4
-
+-- InFix Notation
+debug $ 3 `doubleUs` 4
 
   
