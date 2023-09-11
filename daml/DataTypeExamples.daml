@@ -1,0 +1,13 @@
+module DataTypeExamples where
+
+import Daml.Script 
+
+datatype_test : Script () 
+datatype_test = script do 
+ let 
+  amount1: Int 
+  amount1 = 10
+
+ debug $ amount1 
+
+ return () 
