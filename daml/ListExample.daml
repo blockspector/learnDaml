@@ -1,0 +1,45 @@
+module ListExample where
+
+import Daml.Script 
+import DA.List
+
+listTest: Script () 
+listTest = script do 
+    let
+        intList = [1,2,4,5]
+        fruitList = ["orange","apple","banana","mango"]
+        veggieList = ["carrot","potato","onion","tomato"]
+
+        rangeList = [10..20]
+        evenList = [2,4..20]
+
+        fruitAndVeggieList = fruitList <> veggieList
+
+
+    debug $ "Length: " <> show (length veggieList)
+
+    debug $ "Head: " <> show (head fruitList)
+    debug $ "Tail: " <> show (tail fruitList)
+    debug $ "last: " <> show (last fruitList)
+    debug $ "Length:" <> show (length fruitList)
+    debug $ "Reverse:" <> show (reverse fruitList)
+    debug $ "Take:" <> show (take 2 fruitList)
+    debug $ "Drop:" <> show (drop 2 fruitList)
+    debug $ "Zip:" <> show (zip intList fruitList)  
+    debug $ "ZipWith:" <> show (zipWith (\x y -> x <> " " <> y) fruitList fruitList)
+    debug $ "Map:" <> show (map (\x -> x <> " " <> x) fruitList)
+    debug $ "Filter:" <> show (filter (\x -> x == "apple") fruitList)
+    debug $ "Foldl: " <> show (foldl (\x y -> x <> " " <> y) "" fruitList)
+    -- Sorts Alphabetically
+    debug $ "sort: " <> show (sort fruitList)
+     -- Removed the last value from the list
+    debug $ "init: " <> show (init fruitList)
+-- Checks if value is in the list 
+    debug $ "elem: " <> show (elem "apple" fruitList)
+    debug $ "sum: " <> show (sum intList)
+    debug $ "product: " <> show (product intList)
+
+    debug $ "Range: " <> show (rangeList)
+    debug $ "Even: " <> show (evenList) 
+    -- Add to the start of the list 
+    debug $ "prepend: " <> show ("grape" :: fruitList)
